@@ -1,30 +1,8 @@
-body {
-  overflow: hidden;
-} 
-/* Hace que el scroll solo funcione en las secciones dentro de <main> */
-main {
-  scroll-snap-type: y mandatory; /* Snap en dirección vertical */
-  overflow-y: scroll;
+
+
+section {
   height: 100vh;
-}
+  scroll-snap-type: y mandatory;
+  overflow-y: hidden;
 
-/* Cada sección ocupa el 100% de la pantalla */
-.section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: start; /* Se alinea al inicio */
-}
-
-/* Hace que el header sea fijo en la parte superior */
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Agrega margen para que el contenido no se oculte detrás del header */
-main {
-  margin-top: 60px; /* Ajusta según la altura del header */
 }
