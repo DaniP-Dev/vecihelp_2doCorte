@@ -12,7 +12,7 @@
   scroll-behavior: smooth; 
 }
 
-/* Cada sección se "ancla" cuando está cerca del inicio de la vista */
+/* Cada sección se "ancla" cuando esta cerca del inicio de la vista */
 section {
   height: 100vh;
   display: flex;
