@@ -1,16 +1,33 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const configurarToggleIframe = (idBoton, idContenedorIframe) => {
+        const botonToggle = document.getElementById(idBoton);
+        const contenedorIframe = document.getElementById(idContenedorIframe);
+
+        if (botonToggle && contenedorIframe) {
+            botonToggle.addEventListener("click", () => {
+                if (contenedorIframe.classList.contains("d-none")) {
+                    contenedorIframe.classList.remove("d-none"); // Mostrar iframe
+                    botonToggle.textContent = "Cerar";
+                } else {
+                    contenedorIframe.classList.add("d-none"); // Ocultar iframe
+                    botonToggle.textContent = "ChatBot";
+                }
+            });
+        } else {
+            console.error(`Elementos con los IDs ${idBoton} o ${idContenedorIframe} no encontrados.`);
+        }
+    };
+
+    // Configuración inicial
+    configurarToggleIframe("botonIframe", "contenedorIframe");
+});
+
+
 document.getElementById("entrada").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         enviarMensaje();
     }
 });
-const abrirChat = () => {
-    document.getElementById("chatContainer").style.display = "block";
-    document.getElementById("btnChatbot").style.display = "none";
-};
-const cerrarChat = () => {
-    document.getElementById("chatContainer").style.display = "none";
-    document.getElementById("btnChatbot").style.display = "block";
-};
 
 const enviarMensaje = () => {
     let entrada = document.getElementById("entrada");
