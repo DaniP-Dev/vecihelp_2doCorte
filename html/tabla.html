@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr id="filaEncabezado">
+                <!-- Encabezados dinámicos -->
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Datos dinámicos -->
+        </tbody>
+        <tfoot>
+            <tr class="text-center">
+                <td><button class="btn btn-primary" onclick="paginaAnterior()">Anterior</button></td>
+                <td id="numeroPagina" class="text-center">1</td>
+                <td><button class="btn btn-primary" onclick="paginaSiguiente()">Siguiente</button></td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <script>
+        // Datos de ejemplo (pueden venir de un JSON externo)
+        const datos = [
+            { "Saludo": "Hola1", "Extra": "Dato1", "Otro": "Info1" },
+            { "Saludo": "Hola2", "Extra": "Dato2", "Otro": "Info2" },
+            { "Saludo": "Hola3", "Extra": "Dato3", "Otro": "Info3" },
+            { "Saludo": "Hola4", "Extra": "Dato4", "Otro": "Info4" },
+            { "Saludo": "Hola5", "Extra": "Dato5", "Otro": "Info5" },
+            { "Saludo": "Hola6", "Extra": "Dato6", "Otro": "Info6" }
+        ];
+
+        const filasPorPagina = 3; // Número de filas por página
+        let paginaActual = 1;
+        const totalPaginas = Math.ceil(datos.length / filasPorPagina);
+
+        const filaEncabezado = document.getElementById("filaEncabezado");
+        const cuerpoTabla = document.getElementById("cuerpoTabla");
+        const numeroPagina = document.getElementById("numeroPagina");
+
+        // Crear encabezados dinámicamente
+        const claves = Object.keys(datos[0]);
+        claves.forEach(clave => {
+            const th = document.createElement("th");
+            th.textContent = clave;
+            filaEncabezado.appendChild(th);
+        });
+
+        function mostrarTabla(pagina) {
+            cuerpoTabla.innerHTML = ""; // Limpiar tabla
+            const inicio = (pagina - 1) * filasPorPagina;
+            const fin = inicio + filasPorPagina;
+            const datosPagina = datos.slice(inicio, fin);
+
+            datosPagina.forEach(item => {
+                const fila = document.createElement("tr");
+                claves.forEach(clave => {
+                    const celda = document.createElement("td");
+                    celda.textContent = item[clave];
+                    fila.appendChild(celda);
+                });
+                cuerpoTabla.appendChild(fila);
+            });
+
+            numeroPagina.textContent = pagina; // Actualizar número de página
+        }
+
+        function paginaSiguiente() {
+            if (paginaActual < totalPaginas) {
+                paginaActual++;
+                mostrarTabla(paginaActual);
+            }
+        }
+
+        function paginaAnterior() {
+            if (paginaActual > 1) {
+                paginaActual--;
+                mostrarTabla(paginaActual);
+            }
+        }
+
+        mostrarTabla(paginaActual); // Mostrar primera página
+    </script>
+
+</body>
+
+</html>
