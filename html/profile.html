@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <!-- Datos Personales y Foto -->
+        <div class="row mb-4 align-items-center">
+            <!-- Datos Personales -->
+            <div class="col-md-8 text-center">
+                <h1 id="nombreUsuario">Cargando...</h1>
+                <p id="emailUsuario"></p>
+                <p id="direccionUsuario"></p>
+                <p>
+                    <strong>Fecha de Nacimiento: </strong>
+                    <span id="fechaNacimientoUsuario"></span>
+                </p>
+                <p>
+                    <strong>Fecha de Registro: </strong>
+                    <span id="fechaRegistroUsuario"></span>
+                </p>
+            </div>
+            <!-- Contenedor de Foto -->
+            <div class="col-md-4 text-center">
+                <div class="ratio ratio-4x3 border border-2 border-danger rounded">
+                    <img id="previewImage" alt="Foto de perfil" class="object-fit-cover">
+                </div>
+                <input type="file" class="form-control mt-2" id="fotoInput" accept="image/*">
+            </div>
+
+
+
+        </div>
+
+        <!-- Servicios que Presto -->
+        <div class="row mb-4">
+            <div class="col">
+                <h2 class="text-center">Servicios que Presto</h2>
+                <div class="row justify-content-center">
+                    <!-- Servicio 1 -->
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Servicio 1</h5>
+                                <p class="card-text">Descripción breve del servicio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Servicio 2</h5>
+                                <p class="card-text">Descripción breve del servicio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Servicio 3</h5>
+                                <p class="card-text">Descripción breve del servicio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historial de Servicios y Calificación Lado a Lado -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h2>Historial de Servicios</h2>
+                    <p>Total de servicios realizados: <span id="totalServicios">0</span></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h2>Calificación</h2>
+                    <p>Calificación Promedio: <span id="calificacionPromedio">0</span>/5</p>
+                    <p>Número de Reseñas: <span id="numeroResenas">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/profile.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+</body>
+
+</html>

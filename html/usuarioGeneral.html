@@ -9,14 +9,24 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
 </head>
 
-<body>
+<body class="bg-body-secondary">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container">
                 <div class="row align-items-center w-100">
                     <!-- logo -->
                     <div class="col-6 col-md-6">
-                        <a class="navbar-brand" href="#">VeciHelp</a>
+
+                        <div class="d-flex align-items-center">
+                            <a href="#">
+                                <img src="../img/ico.png" alt="Logo" class="img-fluid"
+                                    style="max-height: 40px; margin-right: 8px;">
+                            </a>
+                            <a class="navbar-brand" href="#" id="nombreUsuario">
+                                <span>Nombre de la Marca</span>
+                            </a>
+                        </div>
+
                     </div>
                     <!-- botones siempre en pamtalla -->
                     <div class="col-6 col-md-6 text-end">
@@ -34,7 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="d-flex flex-column flex-lg-row gap-2 pt-1">
                         <button type="button" class="btn btn-primary">Botón de prueba</button>
-                        <button type="button" class="btn btn-danger">Salir</button>
+                        <button type="button" class="btn btn-danger" onclick="cerrarCuenta()">Salir</button>
                     </div>
                 </div>
 
@@ -52,17 +62,18 @@
                         <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#home">Home</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#profile">Algo</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#profile">Agregar Servicio</button>
                     </li>
                     <li class="nav-item">
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#contact">Algo</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#disabled">Algo</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#profileID">Perfil</button>
                     </li>
                 </ul>
             </div>
         </div>
+
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active bg-primary" id="home">
                 <div class="row">
@@ -70,16 +81,21 @@
                 </div>
             </div>
             <div class="tab-pane fade bg-secondary" id="profile">
-                <div class="row">Contenido de Profile</div>
+                <div class="row">
+                    <iframe src="./addServicioFormulario.html" class="w-100 vh-100 border-0"></iframe>
+                </div>
             </div>
             <div class="tab-pane fade bg-warning" id="contact">
                 <div class="row">Contenido de Contact</div>
             </div>
-            <div class="tab-pane fade bg-danger" id="disabled">
-                <div class="row">Contenido Deshabilitado</div>
+            <div class="tab-pane fade bg-danger" id="profileID">
+                <div class="row">
+                    <iframe src="../html/profile.html" class="w-100 vh-100 border-0">></iframe>
+                </div>
             </div>
         </div>
     </div>
+
 
     <div class="container mt-3"> <!-- todo este div solo funciona junto al archivo chatbot.js -->
         <div id="contenedorIframe" class="d-none position-fixed bottom-0 end-0 bg-white shadow border"

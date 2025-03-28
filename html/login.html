@@ -16,16 +16,19 @@
         <form>
             <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="usuario@example.com" required>
+                <input type="email" class="form-control" id="emailInput" placeholder="usuario@example.com">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+                <label for="password" class="form-label">Clave</label>
+                <input type="password" class="form-control" id="passwordInput" placeholder="Tu Clave">
             </div>
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <button type="button" class="btn btn-primary w-100" onclick="loginUsuario()">Entrar</button>
         </form>
     </div>
+
     <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 
 </html>
